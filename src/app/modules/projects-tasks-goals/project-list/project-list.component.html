@@ -1,0 +1,13 @@
+<div class="row">
+    <div class="col-md-9">
+        <div class="table-full-width">
+            <app-table-view [dataList]="projectsList"></app-table-view>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <app-status-chart [chartConfig]="taskStatusConfig"></app-status-chart>
+        <div class="card">
+            <app-team-list-card [listConfig]="teamListCardConfig"></app-team-list-card>
+        </div>
+    </div>
+</div>

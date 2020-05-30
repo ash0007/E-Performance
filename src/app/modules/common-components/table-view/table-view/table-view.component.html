@@ -1,0 +1,20 @@
+<ul class="checkbox-list">
+    <li class="add-goal" *ngFor="let data of dataList">
+        <table class="table">
+            <tbody>
+                <tr>
+                    <td style="width: 50px;">
+                        <div class="checkbox">
+                            <input id="checkbox1" type="checkbox">
+                            <label for="checkbox1"></label>
+                        </div>
+                    </td>
+                    <td>{{ data.projectName }}</td>
+                    <td style="width: 150px;" class="gray-text"><i class="fa fa-circle text-danger"></i> Priority</td>
+                    <td style="width: 150px;"><a href="#" class="green-color" (click)="clickToViewDetail(data)">View Details</a></td>
+                    <td style="width: 150px;" class="gray-text"><i class="fa fa-clock-o"></i> Yestarday</td>
+                </tr>
+            </tbody>
+        </table>
+    </li>
+</ul>

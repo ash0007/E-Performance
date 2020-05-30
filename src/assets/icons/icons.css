@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "icomoon";
+    font-style: normal;
+    font-weight: normal;
+
+    font-display: block;
+    src: url("icomoon.eot?akcn1f");
+    src: url("icomoon.eot?akcn1f#iefix") format("embedded-opentype"),
+    url("icomoon.ttf?akcn1f") format("truetype"),
+    url("icomoon.woff?akcn1f") format("woff"),
+    url("icomoon.svg?akcn1f#icomoon") format("svg");
+}
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+   /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-project:before {
+  content: "\e900";
+}
+.icon-feedback:before {
+  content: "\e901";
+}
+.icon-goals:before {
+  content: "\e902";
+}
+.icon-delete:before {
+  content: "\e903";
+}
+.icon-pencil:before {
+  content: "\e904";
+}
+.icon-success:before {
+  content: "\e905";
+}
+.icon-skills:before {
+  content: "\e906";
+}
+.icon-notification:before {
+  content: "\e907";
+}
+.icon-attachment:before {
+  content: "\e908";
+}
+.icon-comment:before {
+  content: "\e909";
+}
+.icon-discription:before {
+  content: "\e90a";
+}
+.icon-team:before {
+  content: "\e90b";
+}
+.icon-list:before {
+  content: "\e90c";
+}
+.icon-list-view:before {
+  content: "\e90d";
+}
+.icon-grid-view:before {
+  content: "\e90e";
+}
+.icon-view:before {
+  content: "\e90f";
+}
+.icon-sort:before {
+  content: "\e910";
+}

@@ -1,0 +1,9 @@
+<ng-template [ngIf]="subMenuList.length > 0">
+    <button mat-button [matMenuTriggerFor]="menuName">{{ menuTitle }}</button>
+    <mat-menu #menuName="matMenu" xPosition="after">
+        <button mat-menu-item *ngFor="let item of subMenuList">{{ item.name }}</button>
+    </mat-menu>
+</ng-template>
+<ng-template [ngIf]="subMenuList.length == 0">
+    <button mat-button>{{ menuTitle }}</button>
+</ng-template>

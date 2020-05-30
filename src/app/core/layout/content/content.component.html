@@ -1,0 +1,25 @@
+<div class="wrapper">
+    <app-left></app-left>
+    <app-main>
+        <div class="main-panel main-content-app">
+            <nav class="navbar navbar-default navbar-fixed">
+                <div class="container-fluid">
+                    <!-- <app-header></app-header> -->
+                    <ng-content select="[app-header-content]"></ng-content>
+                </div>
+            </nav>
+            <div class="brandcrumb">
+                <div class="container-fluid">
+                    <ng-content select="[app-subheader-content]"></ng-content>
+                    <!-- <app-subhead-content></app-subhead-content> -->
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-fluid">
+                    <ng-content select="[app-main-content]"></ng-content>
+                    <!-- <router-outlet></router-outlet> -->
+                </div>
+            </div>
+        </div>
+    </app-main>
+  </div>

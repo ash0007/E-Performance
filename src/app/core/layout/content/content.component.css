@@ -1,0 +1,10 @@
+.main-content {
+    height: calc(100vh - 100px);
+    width: calc(100vw - 100px);
+    background-color: gray;
+}
+
+.subhead-content {
+    height: 7vh;
+    background-color: #aeaeaf;
+}

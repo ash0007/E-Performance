@@ -1,0 +1,595 @@
+{
+  "info": {
+    "_postman_id": "4f36e5d8-9d55-48b0-b5bd-00a76636ff10",
+    "name": "performance",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "store employee",
+      "_postman_id": "51838dff-01a9-4d22-826e-0362a1639516",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"userName\":\"v101652\",\"password\":\"Yash@2021\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/evaluatemyperformance/rest/login"
+      },
+      "response": []
+    },
+    {
+      "name": "createEmployee",
+      "_postman_id": "b407a0a7-f0ad-4638-87e3-dbc6463fe33a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"employee_fname\":\"kk\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "http://localhost:8080/evaluatemyperformance/rest/addEmployee"
+      },
+      "response": []
+    },
+    {
+      "name": "createPproject",
+      "_postman_id": "b7801d85-e762-455a-9de4-61b16e71f0a1",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"projectName\":\"lockdown timepass\",\n\"projectStartDate\":\"2020-03-03\", \"projectDueDate\":\"2020-03-10\",\n\"projectDescription\":\"What is the meaning of Lorem Ipsum?\",\n\"projectCreatedBy\":\"1\",\n\"projectPriority\":\"Low  (Low,Medium,High)\",\n\"projectAttachment\":\"assets/upload/project_attachment/project_attachment_1585482920.jpg\"} ",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addProject"
+      },
+      "response": []
+    },
+    {
+      "name": "getProjectList",
+      "_postman_id": "a1604d11-49c2-47ad-b64b-5e4b626eb9bc",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getProjectList"
+      },
+      "response": []
+    },
+    {
+      "name": "updateProject",
+      "_postman_id": "15ca7db7-3929-4885-bab4-810d86d7d729",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n            \"projectId\": 1,\r\n            \"departmentId\": 10,\r\n            \"projectName\": \"Dummy project 2\",\r\n            \"projectStartDate\": null,\r\n            \"projectDueDate\": null,\r\n            \"projectDescription\": \"What is the meaning of Lorem Ipsum?\",\r\n            \"projectCreatedBy\": 1,\r\n            \"projectPriority\": \"Low  (Low,Medium,High)\",\r\n            \"projectAttachment\": \"assets/upload/project_attachment/project_attachment_1585482920.jpg\",\r\n            \"projectCreatedDate\": \"2020-03-03\",\r\n            \"projectUpdatedDate\": null\r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/updateProject"
+      },
+      "response": []
+    },
+    {
+      "name": "CreateDepartment",
+      "_postman_id": "cb98cd7a-d243-4ea5-b65a-d42d47995359",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"departmentName\":\"Testkk\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addDepartment"
+      },
+      "response": []
+    },
+    {
+      "name": "getDept",
+      "_postman_id": "3c5f5fa2-ead3-4cac-8016-feb6019ac933",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/getDepartment?departmentId=1",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "getDepartment"
+          ],
+          "query": [
+            {
+              "key": "departmentId",
+              "value": "1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "addDesignation",
+      "_postman_id": "eed22cca-9406-4895-bc4a-d2ee222776e8",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \"designationName\": \"Project Manager14\",\r\n        \"departmentId\": 1,\r\n        \"parentDesignationId\": 0,\r\n        \"designationLevelNo\": 0,\r\n        \"canCreateEmployee\": 0,\r\n        \"canCreateFeedbackReq\": 0,\r\n        \"canCreateRateSkill\": 0,\r\n        \"canCreateTask\": 0,\r\n        \"canCreateProject\": 0,\r\n        \"canCreateTeam\": 0,\r\n        \"canAddEmployeeToTeam\": 0,\r\n        \"canEvaluateSkill\": 0,\r\n        \"canViewTeam\": 0,\r\n        \"canViewAllTask\": 0,\r\n        \"canApproveGoal\": 0\r\n     \r\n    }\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addDesignation"
+      },
+      "response": []
+    },
+    {
+      "name": "getEmployee",
+      "_postman_id": "b74a1754-e595-4e21-9881-527a39000575",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/getEmployeeData",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "getEmployeeData"
+          ],
+          "query": [
+            {
+              "key": "employeeId",
+              "value": "1",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDesignation",
+      "_postman_id": "aabe41d3-e982-4c7c-a9fb-c2617e707a64",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getDesignation"
+      },
+      "response": []
+    },
+    {
+      "name": "getTask",
+      "_postman_id": "5c488fd9-9d28-4dbc-a781-af73685784d8",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getTask"
+      },
+      "response": []
+    },
+    {
+      "name": "CreateGoal",
+      "_postman_id": "afc2e790-2ad5-4d47-90f0-ee656cdbce56",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{        \"taskId\": 6,\r\n        \"departmentId\": 2,\r\n        \"goalHeading\": \"india\",\r\n        \"goalDescription\": \"india\",\r\n        \"goalStartDate\": \"2018-04-20\",\r\n        \"goalEndDate\": \"2022-04-20\",\r\n        \"employeeId\": 4,\r\n        \"goalAttachment\": \"kjbdhej\",\r\n        \"goalStatus\": \"approved\",\r\n        \"goalApprovedStatus\": \"india\",\r\n        \"confirmNote\": \"india\"\r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addGoal"
+      },
+      "response": []
+    },
+    {
+      "name": "createTask",
+      "_postman_id": "6537e310-dcfb-49c1-bdfb-51031b4c7f8c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t \"departmentId\": 2,\n        \"taskHeading\": \"yes\",\n        \"taskDescription\": \"hello\",\n        \"projectId\": 2,\n        \"assignedById\": 3,\n        \"assignedToId\": 2,\n        \"taskStartDate\": \"2020-04-01\",\n        \"taskDueDate\": \"2021-04-30\",\n        \"taskAttachment\": \"null\",\n        \"taskPriority\": \"High\",\n        \"taskStatus\": \"Pending\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addTask"
+      },
+      "response": []
+    },
+    {
+      "name": "getGoal",
+      "_postman_id": "1c63273c-7e75-435a-a2ca-7429879ed05a",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n            \"goalId\": 2\r\n            \r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getGoal"
+      },
+      "response": []
+    },
+    {
+      "name": "updateGoal",
+      "_postman_id": "1cbcdff4-e73a-4b56-9586-5dcdca7ed1b8",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n            \"goalId\": 1,\r\n            \"taskId\": 6,\r\n            \"departmentId\": 2,\r\n            \"goalHeading\": \"india updated xx\",\r\n            \"goalDescription\": \"india\",\r\n            \"goalStartDate\": \"2018-04-20\",\r\n            \"goalEndDate\": \"2022-04-20\",\r\n            \"employeeId\": 4,\r\n            \"goalAttachment\": \"kjbdhej\",\r\n            \"goalStatus\": \"approved\",\r\n            \"goalApprovedStatus\": \"india\",\r\n            \"confirmNote\": \"india\",\r\n            \"goalCreatedDate\": \"2020-05-14\",\r\n            \"goalUpdatedDate\": \"2020-05-14\",\r\n            \"activateFlag\": 1\r\n        }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/updateGoal"
+      },
+      "response": []
+    },
+    {
+      "name": "getSkill",
+      "_postman_id": "7acd2e10-2c2a-487e-a342-cfc011af0246",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getSkill"
+      },
+      "response": []
+    },
+    {
+      "name": " createSkill",
+      "_postman_id": "0573a063-cf2d-446d-b260-2c7a17fb6feb",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \r\n        \"skillName\": \"J2EE Developer2\"\r\n        \r\n        \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addSkill"
+      },
+      "response": []
+    },
+    {
+      "name": "updateSkill",
+      "_postman_id": "ad4b14bb-e061-472a-9601-0965aef5eef3",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"skillId\":2,\"skillName\":\"hibernate\"}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/updateSkill"
+      },
+      "response": []
+    },
+    {
+      "name": "getEmployeeSkill",
+      "_postman_id": "f9998463-42a0-4fa8-b139-2777ecfb121b",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getEmployeeSkill"
+      },
+      "response": []
+    },
+    {
+      "name": "MapEmployeeSkill",
+      "_postman_id": "92b9878f-0e17-4700-964d-fded3f690281",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n        {\r\n            \"skillMpgId\": 1,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 3,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": \"2020-05-15\",\r\n            \"activateFlag\": 0\r\n        },\r\n        {\r\n            \"skillMpgId\": 3,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 3,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": \"2020-05-15\",\r\n            \"activateFlag\": 1\r\n        },\r\n        {\r\n            \"skillMpgId\": 5,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 4,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": \"2020-05-15\",\r\n            \"activateFlag\": 1\r\n        },\r\n        {\r\n            \"skillMpgId\": 6,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 4,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": \"2020-05-15\",\r\n            \"activateFlag\": 1\r\n        },\r\n        {\r\n            \"skillMpgId\": 7,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 3,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": null,\r\n            \"activateFlag\": 1\r\n        },\r\n        {\r\n            \"skillMpgId\": 8,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 3,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": null,\r\n            \"activateFlag\": 1\r\n        },\r\n        {\r\n            \"skillMpgId\": 9,\r\n            \"skillId\": 1,\r\n            \"skillProficiency\": 0,\r\n            \"employeeId\": 3,\r\n            \"createdDate\": \"2020-05-15\",\r\n            \"updatedDate\": null,\r\n            \"activateFlag\": 1\r\n        }\r\n    ]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/mapEmployeeSkill"
+      },
+      "response": []
+    },
+    {
+      "name": "getTeam",
+      "_postman_id": "f4a5bce8-4e8a-409e-a039-cfdb6d1b6450",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "localUrl/rest/getTeam"
+      },
+      "response": []
+    },
+    {
+      "name": "getTeamMember",
+      "_postman_id": "ef966564-997a-4b15-8fbd-c151036b0320",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getTeamMember"
+      },
+      "response": []
+    },
+    {
+      "name": "createTeam",
+      "_postman_id": "985dee6d-9329-4cda-967e-f226492d69a5",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n\t\r\n        \"departmentId\": 1,\r\n        \"teamName\": \"performance_test3\",\r\n        \"projectId\": 5,\r\n        \"teamCreatedBy\": 1,\r\n        \"teamUpdatedBy\":5\r\n       \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addTeam"
+      },
+      "response": []
+    },
+    {
+      "name": "addTeamMember",
+      "_postman_id": "8ebaf606-632a-4d3d-9bab-938a7f32a44c",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "\r\n\t [\r\n        {\r\n            \"teamMemberId\": 1,\r\n            \"teamId\": 0,\r\n            \"employeeId\": 0,\r\n            \"teamMemberCreatedDate\": \"2020-05-18\",\r\n            \"activateFlag\": 0\r\n        },\r\n        {\r\n            \"teamMemberId\": 2,\r\n            \"teamId\": 0,\r\n            \"employeeId\": 0,\r\n            \"teamMemberCreatedDate\": \"2020-05-18\",\r\n            \"activateFlag\": 1\r\n        }\r\n    ]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/manageTeam"
+      },
+      "response": []
+    },
+    {
+      "name": "mapEmployee",
+      "_postman_id": "ea0cdd77-356a-4cb9-a033-67116b66d28c",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": ""
+      },
+      "response": []
+    },
+    {
+      "name": "createCompany",
+      "_postman_id": "c16dc862-4bd4-43fa-80e7-431d0d681601",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \r\n        \"companyName\": \"X h Tech\",\r\n        \"adminEmail\": \"krisbhna@mail.com\",\r\n        \"adminMobile\": \"998837\",\r\n        \"companyDomain\": \"test\",\r\n        \"portalName\": \"y.com\",\r\n        \"industryType\": \"automobile\",\r\n        \"contactPerson\": \"boss\",\r\n        \"apiURLPrefix\": \"test\"\r\n        \r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addCompany"
+      },
+      "response": []
+    },
+    {
+      "name": "getCompany",
+      "_postman_id": "b5fad562-8249-4ce6-a302-6e855cbe9bcd",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getCompany"
+      },
+      "response": []
+    },
+    {
+      "name": "updateCompany",
+      "_postman_id": "5d8cecfb-c49c-4316-a33b-ddc3e15d313a",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": ""
+      },
+      "response": []
+    },
+    {
+      "name": "createAdminEmployee",
+      "_postman_id": "cf1f66a3-3b9d-47d4-ac27-a908e08a9e61",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n        \r\n        \"companyId\": null,\r\n        \"fName\": null,\r\n        \"mName\": null,\r\n        \"email\": null,\r\n        \"password\": null,\r\n        \"mobileNo\": null,\r\n        \"createdDate\": null,\r\n        \"updatedDate\": null,\r\n        \"activateFlag\": null\r\n    }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/addAdminEmployee"
+      },
+      "response": []
+    },
+    {
+      "name": "getAdminEmpList",
+      "_postman_id": "983eded6-d9a2-4b93-b3b3-6fa69fa8c196",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "{{url}}/getAdminEmployee"
+      },
+      "response": []
+    },
+    {
+      "name": "updateAdminEmployee",
+      "_postman_id": "2630a5c8-9be8-4b52-a896-61f1169bb300",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": ""
+      },
+      "response": []
+    }
+  ],
+  "protocolProfileBehavior": {}
+}

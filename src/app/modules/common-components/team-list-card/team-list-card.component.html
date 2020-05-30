@@ -1,0 +1,16 @@
+<div class="header">
+    <h4 class="title">{{ listConfig.title }}</h4>
+</div>
+<div class="content team-list">
+    <div class="media" *ngFor="let item of listConfig.list">
+        <div class="media-left">
+            <a href="#">
+                <img class="media-object" src="{{ item.iconImage }}" alt="...">
+            </a>
+        </div>
+        <div class="media-body">
+            <h4 class="media-heading">{{ item.name }}</h4>
+            <p>{{ item.designation }}</p>
+        </div>
+    </div>
+</div>
