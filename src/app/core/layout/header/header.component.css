@@ -1,0 +1,22 @@
+.header {
+    min-height: 10%;
+    max-height: 20%;
+    height: calc(10vh);
+    background-color: aliceblue;
+}
+
+.header-left {
+
+}
+
+.header-center {
+
+}
+
+.header-right {
+
+}
+
+.header-icon-left {
+    
+}

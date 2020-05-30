@@ -1,0 +1,117 @@
+<app-content>
+    <div app-header-content>
+        <app-header></app-header>
+    </div>
+    <div app-subheader-content>
+        <app-subhead-content></app-subhead-content>
+    </div>
+    <div app-main-content>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="slide-content slide-container">
+                    <h3>Add Employe</h3>
+                    <form [formGroup]="employeeGroup" (ngSubmit)="submit(employeeGroup)">
+                        <div class="card wizard-card" data-color="orange" id="wizardProfile">
+                            <div class="picture-container">
+                                <div class="picture">
+                                    <img src="assets/img/default-avatar.jpg" class="picture-src" id="wizardPicturePreview"
+                                        title="">
+                                    <input formControlName="profilePic" type="file" id="wizard-picture"
+                                        (change)="onFileChange($event)">
+                                </div>
+                                <h6>upload Profile Picture</h6>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label for="">First Name</label>
+                                <input formControlName="firstName" type="text" class="form-control"
+                                    placeholder="Enter your first name">
+                                <div *ngIf="employeeGroup.get('firstName').hasError('required') && employeeGroup.get('firstName').dirty"
+                                    class="alert alert-danger">
+                                    First Name is required.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Email Address</label>
+                                <input type="text" formControlName="emailAddress" class="form-control"
+                                    placeholder="Enter your email address">
+                                <div *ngIf="employeeGroup.get('emailAddress').hasError('required') && employeeGroup.get('emailAddress').dirty"
+                                    class="alert alert-danger">
+                                    Email is required.
+                                </div>
+                                <div *ngIf="employeeGroup.get('emailAddress').hasError('email') && employeeGroup.get('emailAddress').dirty"
+                                    class="alert alert-danger">
+                                    Email is not valid.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">select Role</label>
+                                <select name="" id="" class="form-control" formControlName="selectRole">
+                                    <option value="{{role}}" *ngFor="let role of rolesList">{{ role }}</option>
+                                </select>
+                                <div *ngIf="employeeGroup.get('selectRole').hasError('required') && employeeGroup.get('selectRole').dirty"
+                                    class="alert alert-danger">
+                                    Role is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-section">
+                            <div class="form-group">
+                                <label for="">Last Name</label>
+                                <input type="text" formControlName="lastName" class="form-control"
+                                    placeholder="Enter your last name">
+                                <div *ngIf="employeeGroup.get('lastName').hasError('required') && employeeGroup.get('lastName').dirty"
+                                    class="alert alert-danger">
+                                    Last name is required.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Phone Number</label>
+                                <input type="text" class="form-control" placeholder="Enter your phone number"
+                                    formControlName="phoneNumber">
+                                <div *ngIf="employeeGroup.get('phoneNumber').hasError('required') && employeeGroup.get('phoneNumber').dirty"
+                                    class="alert alert-danger">
+                                    Phone number is required.
+                                </div>
+                                <div *ngIf="employeeGroup.get('phoneNumber').hasError('pattern') && employeeGroup.get('phoneNumber').dirty"
+                                    class="alert alert-danger">
+                                    Phone number is not valid.
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="fun" class="control-label text-right">Gender</label>
+                                <div class="input-group">
+                                    <div id="radioBtn" class="btn-group">
+                                        <a class="btn btn-primary gender btn-sm active" data-toggle="fun"
+                                            data-title="Y">Male</a>
+                                        <a class="btn btn-primary gender btn-sm notActive" data-toggle="fun"
+                                            data-title="X">Female</a>
+                                        <a class="btn btn-primary btn-sm gender notActive" data-toggle="fun"
+                                            data-title="N">Other</a>
+                                    </div>
+                                    <input type="hidden" name="fun" id="fun" formControlName="gender">
+                                    <div *ngIf="employeeGroup.get('gender').hasError('required') && employeeGroup.get('gender').dirty"
+                                        class="alert alert-danger">
+                                        Gender is not selected.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" disabled="employeeGroup.invalid" value="Add Employe" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-content>
+<script type="text/javascript">
+$("#radioBtn a").on('click', function(){
+    var sel = $(this).data('title');
+    var tog = $(this).data('toggle');
+    $('#'+tog).prop('value', sel);
+    
+    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
+    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
+})
+</script>

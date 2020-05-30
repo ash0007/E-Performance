@@ -1,0 +1,37 @@
+<app-content>
+    <div app-header-content>
+        <app-header></app-header>
+    </div>
+    <div app-subheader-content>
+        <app-subhead-content></app-subhead-content>
+    </div>
+    <div app-main-content>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="slide-content slide-container">
+                    <h3>Create Department</h3>
+                    <form [formGroup]="deptFormGroup" (ngSubmit)="onSubmit(deptFormGroup)">
+                        <div>
+                            <div class="form-group">
+                                <label for="">Department Name</label>
+                                <input type="text" formControlName="deptName" class="form-control" placeholder="Enter Department Name">
+                                <div *ngIf="deptFormGroup.get('deptName').hasError('required') && deptFormGroup.get('deptName').dirty" class="alert alert-danger">
+                                    Department Name is Required.
+        
+                            </div>
+                            </div>
+                        </div>
+                        <input type="submit" [disabled]="!deptFormGroup.valid" value="Create Department" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <ul class="team-listvew">
+            <li *ngFor="let list of departments">
+                <div class="team-thumb"></div>
+                <h4>{{ list }}</h4>
+            </li>
+        </ul>
+    </div>
+</app-content>

@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="header">
+        <h4 class="title">{{ chartConfig.title }}</h4>
+    </div>
+    <div class="content">
+        <div class="row">
+                <ngx-chart
+                class="col-md-12"
+                    [data]="chart.data"
+                    [type]="chart.type"
+                    [options]="chart.options"
+                    [responsiveOptions]="chart.responsiveOptions"
+                    [events]="chart.events"
+                >
+                    <span class="center-count"><b>{{chartConfig.total.count}}</b>{{ chartConfig.total.title }}</span>
+                </ngx-chart>
+            <!-- <div class="col-md-3"> -->
+                <!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"> -->
+                    <!-- <span class="center-count"><b>{{chartConfig.total.count}}</b>{{ chartConfig.total.title }}</span> -->
+                <!-- </div> -->
+            <!-- </div> -->
+            <!-- <div class="col-md-6">
+                <div class="footer">
+                    <ul class="legend">
+                        <li><i class="fa fa-circle text-info"></i> Total Task</li>
+                        <li><i class="fa fa-circle text-danger"></i> Completed task</li>
+                        <li><i class="fa fa-circle text-warning"></i> Working</li>
+                        <li><i class="fa fa-circle text-warning"></i> Over due task</li>
+                    </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
