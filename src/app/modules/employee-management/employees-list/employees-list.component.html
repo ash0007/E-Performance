@@ -1,7 +1,49 @@
-<div class="row">
-    <div class="col-md-9">
-        <div class="table-full-width">
-            <!-- <app-table-view [dataList]="projectsList"></app-table-view> -->
+<app-content>
+    <div app-header-content>
+        <app-header></app-header>
+    </div>
+    <div app-subheader-content>
+        <app-subhead-content></app-subhead-content>
+    </div>
+    <div app-main-content>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="search-form">
+                            <i class="fa fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Search by name">
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-right">
+                        <div class="teamlist-control">
+                            <span><i class="icon-sort"></i>Sort by: Designer</span><span><i class="icon-view"></i>Display Option</span><span class="team-viewtype"><i class="icon-list-view active-view"></i><i class="icon-grid-view"></i></span><button class="btn btn-danger create-team" (click)="ceateTeam();">Create Team</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="table-full-width">
+                    <ul class="team-member team-listvew">
+                        <li *ngFor="let employee of employeeList">
+                            <div class="team-thumb"></div>
+                            <h4>{{employee.employeeFname}} <strong>{{employee.designationId}}</strong></h4>
+                            <a href="#">{{employee.employeeEmail}}</a>
+                            <button class="btn btn-success">Select</button>
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-ellipsis-h"></i></button>
+                                <ul class="dropdown-menu">
+                                    <li class="feedbackgive"><a href="#"><i class="icon-feedback"></i> Give Feedback</a></li>
+                                    <li class="team-feedback"><a href="#"><i class="icon-feedback"></i> Request feedback for other team member</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- <app-table-view [dataList]="projectsList"></app-table-view> -->
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</app-content>

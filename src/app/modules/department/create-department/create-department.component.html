@@ -17,8 +17,19 @@
                                 <input type="text" formControlName="deptName" class="form-control" placeholder="Enter Department Name">
                                 <div *ngIf="deptFormGroup.get('deptName').hasError('required') && deptFormGroup.get('deptName').dirty" class="alert alert-danger">
                                     Department Name is Required.
-        
+                                </div>
                             </div>
+                        </div>
+                        <div *ngIf="designationsList && designationsList.length > 0">
+                            <div class="form-group">
+                                <label for="">Select Designations</label>
+                                <select formControlName="industryType" class="form-control">
+                                    <option value="" disabled>Select Designations</option>
+                                    <option *ngFor="let designation of designationsList" value="{{designation.id}}">{{designation.designationName}}</option>
+                                </select>
+                                <div *ngIf="deptFormGroup.get('designations').hasError('required') && deptFormGroup.get('designations').dirty" class="alert alert-danger">
+                                    Designations Name is Required.
+                                </div>
                             </div>
                         </div>
                         <input type="submit" [disabled]="!deptFormGroup.valid" value="Create Department" class="btn btn-primary">

@@ -82,15 +82,15 @@
                             <div class="form-group">
                                 <label for="fun" class="control-label text-right">Gender</label>
                                 <div class="input-group">
-                                    <div id="radioBtn" class="btn-group">
+                                    <div #genderSelect id="radioBtn" class="btn-group">
                                         <a class="btn btn-primary gender btn-sm active" data-toggle="fun"
-                                            data-title="Y">Male</a>
+                                            data-title="Y" (click)="genderChange(genderSelect, 0)">Male</a>
                                         <a class="btn btn-primary gender btn-sm notActive" data-toggle="fun"
-                                            data-title="X">Female</a>
+                                            data-title="X" (click)="genderChange(genderSelect, 1)">Female</a>
                                         <a class="btn btn-primary btn-sm gender notActive" data-toggle="fun"
-                                            data-title="N">Other</a>
+                                            data-title="N" (click)="genderChange(genderSelect, 2)">Other</a>
                                     </div>
-                                    <input type="hidden" name="fun" id="fun" formControlName="gender">
+                                    <input type="hidden" name="fun" id="fun" formControlName="gender" [(ngModel)]="genderInput">
                                     <div *ngIf="employeeGroup.get('gender').hasError('required') && employeeGroup.get('gender').dirty"
                                         class="alert alert-danger">
                                         Gender is not selected.
@@ -98,20 +98,10 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" disabled="employeeGroup.invalid" value="Add Employe" class="btn btn-primary">
+                        <input type="submit" [disabled]="employeeGroup.invalid" value="Add Employe" class="btn btn-primary">
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </app-content>
-<script type="text/javascript">
-$("#radioBtn a").on('click', function(){
-    var sel = $(this).data('title');
-    var tog = $(this).data('toggle');
-    $('#'+tog).prop('value', sel);
-    
-    $('a[data-toggle="'+tog+'"]').not('[data-title="'+sel+'"]').removeClass('active').addClass('notActive');
-    $('a[data-toggle="'+tog+'"][data-title="'+sel+'"]').removeClass('notActive').addClass('active');
-})
-</script>

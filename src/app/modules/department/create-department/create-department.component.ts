@@ -9,17 +9,23 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 })
 export class CreateDepartmentComponent implements OnInit {
 
-  departments = [];
+  departments: any[] = [];
+  designationsList: any[] = []
   deptFormGroup: FormGroup;
   constructor(private deptSrv: DepartmentService, private cd: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.deptFormGroup = new FormGroup({
       deptName: new FormControl('', [Validators.required])
-    })
+    });
     this.deptSrv.getDepartmentList().subscribe(result => {
       this.departments = result['dataObj'];
-    })
+    });
+    // this.deptSrv.getDesignations().subscribe(result => {
+      // this.designationsList = result['dataObj'].map(value => {
+        // return {id: value.id, designationName: value.designationName}
+      // });
+    // });
   }
 
   onSubmit(form) {

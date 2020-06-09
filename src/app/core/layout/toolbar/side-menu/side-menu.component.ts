@@ -48,64 +48,68 @@ export class SideMenuComponent implements OnInit {
     // hasChild = (_: number, node: FlatNode) => node.expandable;
 
     sideMenuItems: SideMenuNode[] = [
+        // {
+        //     "name": "Feedback",
+        //     "iconClass": "icon-feedback",
+        //     "route": "feedback",
+        //     "children": [
+        //         {
+        //             "name": "My Feedback"
+        //         },
+        //         {
+        //             "name": "Team Feedback"
+        //         }
+        //     ]
+        // },
+        // {
+        //     "name": "Projects / Tasks / Goals",
+        //     "iconClass": "icon-goals",
+        //     "route": "projects-tasks-goals",
+        //     "isLanding": false,
+        //     "children": [
+        //         {
+        //             "name": "Project List"
+        //         },
+        //         {
+        //             "name": "Task List"
+        //         },
+        //         {
+        //             "name": "Goals List"
+        //         }
+        //     ]
+        // },
+        // {
+        //     "name": "Skills and Competency",
+        //     "iconClass": "icon-skills",
+        //     "route": "skills",
+        //     "children": [
+        //         {
+        //             "name": "Skills and Competency"
+        //         },
+        //         {
+        //             "name": "Skills and Competency"
+        //         }
+        //     ]
+        // },
+        // {
+        //     "name": "Team",
+        //     "iconClass": "icon-team",
+        //     "route": "team",
+        //     "children": [
+        //         {
+        //             "name": "Team List"
+        //         }
+        //     ]
+        // },
         {
-            "name": "Feedback",
-            "iconClass": "icon-feedback",
-            "route": "feedback",
-            "children": [
-                {
-                    "name": "My Feedback"
-                },
-                {
-                    "name": "Team Feedback"
-                }
-            ]
-        },
-        {
-            "name": "Projects / Tasks / Goals",
-            "iconClass": "icon-goals",
-            "route": "projects-tasks-goals",
-            "isLanding": false,
-            "children": [
-                {
-                    "name": "Project List"
-                },
-                {
-                    "name": "Task List"
-                },
-                {
-                    "name": "Goals List"
-                }
-            ]
-        },
-        {
-            "name": "Skills and Competency",
-            "iconClass": "icon-skills",
-            "route": "skills",
-            "children": [
-                {
-                    "name": "Skills and Competency"
-                },
-                {
-                    "name": "Skills and Competency"
-                }
-            ]
-        },
-        {
-            "name": "Team",
-            "iconClass": "icon-team",
-            "route": "team",
-            "children": [
-                {
-                    "name": "Team List"
-                }
-            ]
-        },
-        {
-            "name": "Add Employee",
+            "name": "Employee Management",
             "iconClass": "icon-team",
             "route": "employee",
             "children": [
+                {
+                    "name": "Employee List",
+                    "route": ""
+                },
                 {
                     "name": "Add Employee",
                     "route": "add-employee"
@@ -123,6 +127,18 @@ export class SideMenuComponent implements OnInit {
                     "route": "create-department"
                 }
             ]
+        },
+        {
+            "name": "Create Role",
+            "iconClass": "icon-team",
+            "route": "designation",
+            "isLanding": false,
+            "children": [
+                {
+                    "name": "Create Role",
+                    "route": "create-role"
+                }
+            ]
         }
     ]
 
@@ -134,10 +150,10 @@ export class SideMenuComponent implements OnInit {
         }
     }
     ngOnInit(): void {
-        let lendingModuleInfo = this.sideMenuItems.filter(_routerInfo => _routerInfo.isLanding)[0];
-        if(lendingModuleInfo) {
-            this.navDataChange.changeHeaderInfo(lendingModuleInfo);
-            this.router.navigate([lendingModuleInfo.route]);
-        }
+        // let lendingModuleInfo = this.sideMenuItems.filter(_routerInfo => _routerInfo.isLanding)[0];
+        // if(lendingModuleInfo) {
+        //     this.navDataChange.changeHeaderInfo(lendingModuleInfo);
+        //     this.router.navigate([lendingModuleInfo.route]);
+        // }
     }
 }

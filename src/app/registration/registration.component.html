@@ -28,6 +28,21 @@
     
                                 </div>
                             </div>
+                            <!-- <div class="form-group">
+                                <label for="">Admin Email</label>
+                                <input type="text" formControlName="adminEmail" class="form-control" placeholder="Enter your company name">
+                                <div *ngIf="myForm.get('adminEmail').hasError('required') && myForm.get('adminEmail').dirty" class="alert alert-danger">
+                                        Admin Email is Required.
+    
+                                </div>
+                            </div> -->
+                            <div class="form-group">
+                                <label for="">Company Domain</label>
+                                <input type="text" formControlName="companyDomain" class="form-control" placeholder="Enter your company name">
+                                <div *ngIf="myForm.get('companyDomain').hasError('required') && myForm.get('companyDomain').dirty" class="alert alert-danger">
+                                    Company Domain is Required.
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label for="">Portal Name</label>
                                 <input type="text" formControlName="portalName" class="form-control" placeholder="Enter your portal name">
@@ -46,21 +61,20 @@
                                 </div>
                                 <div *ngIf="myForm.get('industryType').hasError('required') && myForm.get('industryType').dirty" class="alert alert-danger">
                                     Industry is Required.
-    
+                                </div>
                             </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="">Mobile *</label>
+                            <!-- <div class="form-group">
+                                <label for="">Admin Mobile *</label>
                                 <input type="text" formControlName="adminMobile" class="form-control" placeholder="Enter your mobile">
                                 <div *ngIf="myForm.get('adminMobile').dirty">
                                     <span *ngIf="myForm.get('adminMobile').hasError('required')" class="alert alert-danger">
                                         Mobile Number is Required.
                                     </span>
                                     <span *ngIf="myForm.get('adminMobile').hasError('pattern')" class="alert alert-danger">
-                                        Mobile Number is not valid.
+                                        Admin Mobile Number is not valid.
                                     </span>
                                 </div>
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <br>
                                 <input type="submit" [disabled]="!myForm.valid" name="submit" value="Update" class="btn btn-primary">

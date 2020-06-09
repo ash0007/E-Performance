@@ -1,0 +1,49 @@
+<app-content>
+    <div app-header-content>
+        <app-header></app-header>
+    </div>
+    <div app-subheader-content>
+        <app-subhead-content></app-subhead-content>
+    </div>
+    <div app-main-content>
+        <div class="row">
+            <div class="col-md-9">
+                <div class="slide-content slide-container">
+                    <h3>Create Department</h3>
+                    <form [formGroup]="desigFormGroup" (ngSubmit)="onSubmit(desigFormGroup)">
+                        <div>
+                            <div class="form-group">
+                                <label for="">Designation Name</label>
+                                <input type="text" formControlName="desigName" class="form-control" placeholder="Enter Designation Name">
+                                <div *ngIf="desigFormGroup.get('desigName').hasError('required') && desigFormGroup.get('desigName').dirty" class="alert alert-danger">
+                                    Designation Name is Required.
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label>Select Permissions</label>
+                            <div class="form-group container">
+                                <div *ngFor="let permission of permissionsInfoConfig; let i = index;" class="row">
+                                    <label for="">{{permission.title}}</label>
+                                    <br>
+                                    <div class="container">
+                                        <div class="row">
+                                            <ng-container class="col-sm-12 container-permission" style="width:80px" *ngFor="let permissionType of permission.permissionList; let ind = index;" class="col-sm">
+                                                <span class="permTitle">{{permissionType.type}}</span>
+                                                <label class="switch">
+                                                    <input type="checkbox" class="form-control" formControlName="{{'permission' + i + ind}}">
+                                                    <span class="slider round"></span>
+                                                </label>
+                                            </ng-container>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" [disabled]="!desigFormGroup.valid" value="Create Designation" class="btn btn-primary">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</app-content>

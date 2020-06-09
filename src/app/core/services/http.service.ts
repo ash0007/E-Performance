@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  context: string = "http://localhost:8080/evaluatemyperformance/emf";
+  context: string = "http://3.133.244.20:8088/evaluatemyperformance/emf";
   constructor(
     private httpClient: HttpClient
   ) { }

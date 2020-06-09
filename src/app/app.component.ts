@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectorRef, AfterViewInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SessionDataService } from './core/services/session-data.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'E-Performance';
-  constructor(private router: Router, private sessionData: SessionDataService, private cd: ChangeDetectorRef) {}
+  constructor(private router: Router, private sessionData: SessionDataService) {}
 
   hasSessionData: boolean;
 
@@ -20,14 +20,9 @@ export class AppComponent implements OnInit {
     } else {
       this.router.navigate(['registration']);
     }
+    // this.router.navigate(['employee']);
+    // this.router.navigate(['designation']);
   }
-  // ngAfterViewInit() {
-  //   this.cd.detectChanges();
-  //   // this.hasSessionData = !!this.sessionData.SessionData.sessionData;
-  // }
-  // ngOnChanges() {
-  //   this.cd.detectChanges();
-  // }
   // sessionDataSet() {
   //   this.hasSessionData = !!this.sessionData.SessionData.sessionData;
   // }

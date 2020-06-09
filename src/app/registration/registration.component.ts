@@ -22,25 +22,26 @@ export class RegistrationComponent implements OnInit {
     this.industriesList = ["IT Industry", "Manufacturing", "Agriculture", "Construction", "Mining", "Investment", "Insurance", "Finance", "Pharmaceutical Industry", "Coal", "Transport", "Steel", "Bank", "Retail", "Telecommunication"]
     this.myForm = new FormGroup({
       companyName: new FormControl('', [Validators.required]),
+      companyDomain: new FormControl('', [Validators.required, Validators.email]),
       portalName: new FormControl('', [Validators.required, Validators.email]),
-      industryType: new FormControl('', [Validators.required]),
-      adminMobile: new FormControl('', [Validators.required, Validators.pattern("[0-9]{7,14}")])
+      industryType: new FormControl('', [Validators.required])
     });
   }
 
   onSubmit(form): void {
     let json = this.myForm.value;
     this.sessionDataSet.emit('');
-    json.companyDomain = "test";
-    json.adminEmail = "krishna@gmail.com";
     json.contactPerson = "boss";
+    json.adminEmail = "abc@gmail.com";
     json.apiURLPrefix = "test";
-    this.registrationSrv.createCompany(json).subscribe(result => {
+    json.adminMobile = "55456548525";
+    // this.registrationSrv.createCompany(json).subscribe(result => {
       this.sessionData.SessionData = {'a': 33};
+      // this.sessionData.SessionData = json;
       this.cd.detectChanges();
       console.log("result");
       this.router.navigate(["department"]);
-    });
+    // });
   }
 
 }

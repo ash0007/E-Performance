@@ -31,6 +31,10 @@ const routes: Routes = [
     loadChildren:   () => import('./modules/employee-management/employee-management.module').then(m => m.EmployeeManagementModule)
   },
   {
+    path: "designation",
+    loadChildren:   () => import('./modules/designation/designation.module').then(m => m.DesignationModule)
+  },
+  {
     path: "department",
     loadChildren:   () => import('./modules/department/department.module').then(m => m.DepartmentModule)
   }

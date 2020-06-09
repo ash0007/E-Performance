@@ -14,7 +14,12 @@ export class DepartmentService {
   }
 
   getDepartmentList() {
-    let url = '/getDepartment';
+    let url = '/getDepartment?departmentId=-1';
     return this.httpSrv.sendGETRequest(url)
+  }
+
+  getDesignations() {
+    let url = '/getDesignation';
+    return this.httpSrv.sendPOSTRequest(url, {});
   }
 }
